@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber T-Rex Runner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars-bg"></div>
+  <div class="game-wrapper">
+    <!-- Header / Scoreboard -->
+    <header class="game-header">
+      <div class="logo-badge">
+        <span class="icon">🦖</span>
+        <span class="title">CYBER RUNNER</span>
+      </div>
+      <div class="stats-bar">
+        <div class="stat-box">
+          <span class="stat-label">HI SCORE</span>
+          <span id="highScore" class="stat-val">00000</span>
+        </div>
+        <div class="stat-box main-score">
+          <span class="stat-label">SCORE</span>
+          <span id="currentScore" class="stat-val">00000</span>
+        </div>
+        <div class="stat-box speed-box">
+          <span class="stat-label">SPEED</span>
+          <span id="speedVal" class="stat-val">1.0x</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Canvas Container -->
+    <div class="canvas-container">
+      <canvas id="gameCanvas" width="900" height="320"></canvas>
+      
+      <!-- Overlay Screens -->
+      <div id="startOverlay" class="game-overlay active">
+        <div class="overlay-card">
+          <div class="dino-avatar-glow">🦖</div>
+          <h2>NEO DINO RUNNER</h2>
+          <p>Press <kbd>SPACE</kbd> or <kbd>▲</kbd> or Click / Tap to Jump</p>
+          <p class="sub-tip">Press <kbd>▼</kbd> to Duck / Fast Drop</p>
+          <button id="startBtn" class="glow-btn">START RUN</button>
+        </div>
+      </div>
+
+      <div id="gameOverOverlay" class="game-overlay">
+        <div class="overlay-card game-over-card">
+          <div class="alert-icon">💥</div>
+          <h2>SYSTEM CRASH</h2>
+          <div class="end-score-details">
+            <p>Score: <span id="finalScore">0</span></p>
+            <p id="newRecordBadge" class="new-record" style="display: none;">🔥 NEW HIGH SCORE! 🔥</p>
+          </div>
+          <button id="restartBtn" class="glow-btn retry-btn">RETRY RUN</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls / Quick hints -->
+    <footer class="game-footer">
+      <div class="control-hints">
+        <span class="hint-tag"><kbd>SPACE</kbd> / <kbd>↑</kbd> Jump</span>
+        <span class="hint-tag"><kbd>↓</kbd> Duck</span>
+        <span class="hint-tag"><kbd>M</kbd> Sound Mute</span>
+      </div>
+      <div class="audio-toggle">
+        <button id="soundBtn" class="icon-btn" title="Toggle Sound">🔊</button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
